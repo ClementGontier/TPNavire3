@@ -48,7 +48,9 @@
     <Compile Include="ClassesMetier\Navire.cs" />
     <Compile Include="ClassesMetier\Passager.cs" />
     <Compile Include="ClassesMetier\Port.cs" />
+    <Compile Include="ClassesMetier\Stockage.cs" />
     <Compile Include="ClassesMetier\Tanker.cs" />
+    <Compile Include="ClassesMetier\Utilitaire.cs" />
     <Compile Include="ClassesTechniques\Test.cs" />
     <Compile Include="Exceptions\GestionPortException.cs" />
     <Compile Include="Interfaces\ICroisierable.cs" />
@@ -63,6 +65,7 @@
     <None Include="stylecop.json" />
     <None Include="stylecop1.json" />
     <None Include="stylecop2.json" />
+    <None Include="stylecop3.json" />
   </ItemGroup>
   <ItemGroup>
     <Analyzer Include="..\packages\StyleCop.Analyzers.1.1.118\analyzers\dotnet\cs\StyleCop.Analyzers.CodeFixes.dll" />

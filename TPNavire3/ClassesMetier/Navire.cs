@@ -31,12 +31,12 @@ namespace NavireHeritage.ClassesMetier
             return $"{this.imo}" +
                 $"\t{this.nom}";
         }
-        public string Imo { get => imo; }
-        public string Nom { get => nom;  }
-        public string Latitude { get => latitude; set => latitude = value; }
-        public string Longitude { get => longitude; set => longitude = value; }
-        public int TonnageGT { get => tonnageGT; }
-        public int TonnageDWT { get => tonnageDWT;  }
-        public int TonnageActuel { get => tonnageActuel; set => tonnageActuel = value; }
+        public string Imo { get => this.imo; }
+        public string Nom { get => this.nom;  }
+        public string Latitude { get => this.latitude; set => this.latitude = value; }
+        public string Longitude { get => this.longitude; set => this.longitude = value; }
+        public int TonnageGT { get => this.tonnageGT; }
+        public int TonnageDWT { get => this.tonnageDWT;  }
+        public int TonnageActuel { get => this.tonnageActuel; set => this.tonnageActuel = value; }
     }
 }

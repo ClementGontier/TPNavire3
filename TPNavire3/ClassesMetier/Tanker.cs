@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Station.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace NavireHeritage.ClassesMetier
 {
-    internal class Tanker: Navire
+    internal class Tanker: Navire, INavCommercable
     {
         private string typeFluide;
 
@@ -15,9 +16,20 @@ namespace NavireHeritage.ClassesMetier
         {
             this.typeFluide = typeFluide;
         }
+
+        public string TypeFluide { get => this.typeFluide; }
+
         public override string ToString()
         {
             return base.ToString() + " : Tanker";
+        }
+        public void Charger(int qte)
+        {
+            this.tonnageActuel += qte;
+        }
+        public void Decharger(int qte)
+        {
+            this.tonnageActuel -= qte;
         }
     }
 }
