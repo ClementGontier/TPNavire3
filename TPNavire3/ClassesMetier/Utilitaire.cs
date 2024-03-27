@@ -18,20 +18,10 @@ namespace TPNavire3.ClassesMetier
         /// <param name="unNavire">paramètre unNavire de la classe Navire.</param>
         /// <param name="qte">paramètre qte de type entier.</param>
         /// <returns>retourne un dictionnaire.</returns>
-        public Dictionary<int, int> GetItineraireDeChargeNavire(Navire unNavire, int qte)
-        {
-            foreach (unNavire in navireArrivee)
-            {
-                return unNavire.TonnageActuel -= qte;
-            }
-            //foreach (Navire unNavire in this.navireArrives.Values)
-            //{
-            //    if (unNavire.Imo == unImo)
-            //    {
-            //        this.navireArrives[unImo].TonnageActuel -= qte;
-            //    }
-            //}
-        }
+        //public Dictionary<int, int> GetItineraireDeChargeNavire(Navire unNavire, int qte)
+        //{
+
+        //}
 
         /// <summary>
         /// Méthode publique GetItineraireChargeNavire.
@@ -39,9 +29,9 @@ namespace TPNavire3.ClassesMetier
         /// <param name="unNavire">paramètre unNavire de la classe Navire.</param>
         /// <param name="qte">paramètre qte de type entier.</param>
         /// <returns>retourne un dictionnaire.</returns>
-        public Dictionary<int, int> GetItineraireChargeNavire(Navire unNavire, int qte)
-        {
+        //public Dictionary<int, int> GetItineraireChargeNavire(Navire unNavire, int qte)
+        //{
 
-        }
+        //}
     }
 }

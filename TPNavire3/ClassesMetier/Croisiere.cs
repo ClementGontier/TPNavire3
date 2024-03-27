@@ -14,16 +14,18 @@ namespace NavireHeritage.ClassesMetier
         public int NbPassagersMaxi { get => this.nbPassagersMaxi; }
         internal Dictionary<string, Passager> Passagers { get => this.passagers; }
 
-        public Croisiere(string imo, string nom, string latitude, string longitude, int tonnageGT, int tonnageDWT, int tonnageActuel, char typeNavireCroisiere, int nbPassagersMaxi)
+        
+        
+        public Croisiere(string imo, string nom, string latitude, string longitude, int tonnageGT, int tonnageDWT, int tonnageActuel, char typeNavireCroisiere, int nbPassagersMaxi, Dictionary<string, Passager> passagers)
             : base(imo, nom, latitude, longitude, tonnageGT, tonnageDWT, tonnageActuel)
         {
             this.typeNavireCroisiere = typeNavireCroisiere;
             this.nbPassagersMaxi = nbPassagersMaxi;
-        }
-        public Croisiere(string imo, string nom, string latitude, string longitude, int tonnageGT, int tonnageDWT, int tonnageActuel, char typeNavireCroisiere, int nbPassagersMaxi, Dictionary<string, Passager> passagers)
-            : this(imo, nom, latitude, longitude, tonnageGT, tonnageDWT, tonnageActuel, typeNavireCroisiere, nbPassagersMaxi)
-        {
             this.passagers = passagers;
+        }
+        public Croisiere(string imo, string nom, string latitude, string longitude, int tonnageGT, int tonnageDWT, int tonnageActuel, char typeNavireCroisiere, int nbPassagersMaxi)
+            : this(imo, nom, latitude, longitude, tonnageGT, tonnageDWT, tonnageActuel, typeNavireCroisiere, nbPassagersMaxi, new Dictionary<string, Passager>())
+        {
         }
         public override string ToString()
         {
@@ -43,21 +45,26 @@ namespace NavireHeritage.ClassesMetier
                 }
             }
         }
-        public List<Object> Debarquer(List<Object> unPassager)
+        public List<Object> Debarquer(List<Object> lesPassagers)
         {
             List<Object> listPassager = new List<Object>();
-            foreach (Passager passager in this.passagers.Values)
+            foreach (Passager unPassager in lesPassagers)
             {
-                if (unPassager.Contains(passager))
+                if (this.passagers.ContainsKey(unPassager.NumPasseport))
                 {
-                    this.passagers.Remove(passager.NumPasseport);
+                    this.passagers.Remove(unPassager.NumPasseport);
                 }
                 else
                 {
-                    listPassager.Add(passager);
+                    listPassager.Add(unPassager);
                 }
             }
             return listPassager;
+        }
+
+        public int NbPassager()
+        {
+            return this.passagers.Count;
         }
     }
 }

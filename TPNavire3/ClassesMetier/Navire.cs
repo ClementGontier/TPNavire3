@@ -37,6 +37,20 @@ namespace NavireHeritage.ClassesMetier
         public string Longitude { get => this.longitude; set => this.longitude = value; }
         public int TonnageGT { get => this.tonnageGT; }
         public int TonnageDWT { get => this.tonnageDWT;  }
-        public int TonnageActuel { get => this.tonnageActuel; set => this.tonnageActuel = value; }
+        public int TonnageActuel
+        {
+            get => this.tonnageActuel;
+            set
+            {
+                if (this.tonnageActuel + value <= this.tonnageDWT && this.tonnageActuel + value >= 0)
+                {
+                    this.tonnageActuel += value;
+                }
+                else
+                {
+                    throw new Exception("La charge maximale est dépassé ou est négative.");
+                }
+            }
+        }
     }
 }

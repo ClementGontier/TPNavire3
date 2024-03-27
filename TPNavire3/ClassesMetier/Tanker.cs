@@ -25,11 +25,11 @@ namespace NavireHeritage.ClassesMetier
         }
         public void Charger(int qte)
         {
-            this.tonnageActuel += qte;
+            this.TonnageActuel += qte;
         }
         public void Decharger(int qte)
         {
-            this.tonnageActuel -= qte;
+            this.TonnageActuel -= qte;
         }
     }
 }

@@ -111,6 +111,10 @@ namespace NavireHeritage
 
                 Console.WriteLine(port);
 
+
+                Test.TestNbPassager();
+
+
             }
             catch (Exception ex)
             {

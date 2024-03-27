@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -109,6 +110,25 @@ namespace NavireHeritage.ClassesTechniques
                 Console.WriteLine(ex.Message);
             }
         }
+        public static void TestNbPassager()
+        {
+            Croisiere unbateau = new Croisiere("IMO9241061", "RMS QUEEN MARY 2", "6.93393 N", "88.81366 E",
+                        149215, 19189, 17600, 'M', 2620);
+            Console.WriteLine(unbateau.NbPassager());
+            List<Object> listPassager = new List<Object>();
+            listPassager.Add(new Passager("g", "g","g","g"));
+            listPassager.Add(new Passager("j", "j", "j", "j"));
+            unbateau.Embarquer(listPassager);
+            Console.WriteLine(unbateau.NbPassager());
+            List<Object> listDebarquer = new List<Object>();
+            listDebarquer.Add(new Passager("j", "j", "j", "j"));
+            unbateau.Debarquer(listDebarquer);
+            Console.WriteLine(unbateau.NbPassager());
+        }
 
+        //public static void TestChargementDechargement()
+        //{
+
+        //}
     }
 }
